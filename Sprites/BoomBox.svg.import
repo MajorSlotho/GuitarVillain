@@ -2,22 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7exulspgmtl7"
-path="res://.godot/imported/Guitar.svg-a44e033c6fb808141be41043fb7247e6.ctex"
+uid="uid://ckesiva0ijh7a"
+path="res://.godot/imported/BoomBox.svg-60f683a5d6cd3cc8b0f8ef1bec8160bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Guitar.svg"
-dest_files=["res://.godot/imported/Guitar.svg-a44e033c6fb808141be41043fb7247e6.ctex"]
+source_file="res://Sprites/BoomBox.svg"
+dest_files=["res://.godot/imported/BoomBox.svg-60f683a5d6cd3cc8b0f8ef1bec8160bf.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -25,6 +27,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

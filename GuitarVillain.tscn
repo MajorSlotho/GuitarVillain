@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=3 uid="uid://ina4enbtsgii"]
 
-[ext_resource type="Texture2D" uid="uid://dpt06558n7ndk" path="res://NoteBackground.svg" id="1_ldcoy"]
-[ext_resource type="Texture2D" uid="uid://c7exulspgmtl7" path="res://Guitar.svg" id="2_wmoyb"]
+[ext_resource type="Texture2D" uid="uid://dpt06558n7ndk" path="res://Sprites/NoteBackground.svg" id="1_ldcoy"]
+[ext_resource type="Texture2D" uid="uid://c7exulspgmtl7" path="res://Sprites/Guitar.svg" id="2_wmoyb"]
 [ext_resource type="PackedScene" uid="uid://i08gvfkjky4r" path="res://note_spawner.tscn" id="3_wmoyb"]
 [ext_resource type="Script" uid="uid://deepw1h00o7nt" path="res://Orange_spawner.gd" id="4_jmp0b"]
 [ext_resource type="Script" uid="uid://6usf2lwi58wt" path="res://Blue_spawner.gd" id="4_n21kc"]
 [ext_resource type="Script" uid="uid://d18cfjfql2xf" path="res://Green_spawner.gd" id="5_bdf0j"]
 [ext_resource type="Script" uid="uid://xdwvvvlqg6fy" path="res://combo_label.gd" id="7_f3xd0"]
 [ext_resource type="Script" uid="uid://kb4qvvtmvrvh" path="res://healthbar.gd" id="8_hj61f"]
-[ext_resource type="Texture2D" uid="uid://0p5h6dawprhk" path="res://HealthSymbol1.svg" id="9_00b5l"]
+[ext_resource type="Texture2D" uid="uid://0p5h6dawprhk" path="res://Sprites/HealthSymbol1.svg" id="9_00b5l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmoyb"]
 size = Vector2(100, 25)
@@ -44,6 +44,7 @@ position = Vector2(35, -33)
 shape = SubResource("RectangleShape2D_wmoyb")
 
 [node name="NoteSpawnerRed" parent="." instance=ExtResource("3_wmoyb")]
+visible = false
 light_mask = 6
 position = Vector2(608, -11)
 

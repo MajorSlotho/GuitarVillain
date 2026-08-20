@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dk3pxlte0t0yf"
+path="res://.godot/imported/HealthSymbol.ase-63f441e1e6f3b7d6ba2eb020edb00638.res"
+
+[deps]
+
+source_file="res://Sprites/HealthSymbol.ase"
+dest_files=["res://.godot/imported/HealthSymbol.ase-63f441e1e6f3b7d6ba2eb020edb00638.res"]
+
+[params]
+
