@@ -1,0 +1,99 @@
+[gd_scene load_steps=12 format=3 uid="uid://ina4enbtsgii"]
+
+[ext_resource type="Texture2D" uid="uid://dpt06558n7ndk" path="res://NoteBackground.svg" id="1_ldcoy"]
+[ext_resource type="Texture2D" uid="uid://c7exulspgmtl7" path="res://Guitar.svg" id="2_wmoyb"]
+[ext_resource type="PackedScene" uid="uid://i08gvfkjky4r" path="res://note_spawner.tscn" id="3_wmoyb"]
+[ext_resource type="Script" uid="uid://deepw1h00o7nt" path="res://Orange_spawner.gd" id="4_jmp0b"]
+[ext_resource type="Script" uid="uid://6usf2lwi58wt" path="res://Blue_spawner.gd" id="4_n21kc"]
+[ext_resource type="Script" uid="uid://d18cfjfql2xf" path="res://Green_spawner.gd" id="5_bdf0j"]
+[ext_resource type="Script" uid="uid://xdwvvvlqg6fy" path="res://combo_label.gd" id="7_f3xd0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmoyb"]
+size = Vector2(100, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdf0j"]
+size = Vector2(7, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3xd0"]
+size = Vector2(8, 25)
+
+[sub_resource type="LabelSettings" id="LabelSettings_f3xd0"]
+font_size = 47
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(578.844, 327.125)
+scale = Vector2(6.02246, 6.05324)
+texture = ExtResource("1_ldcoy")
+
+[node name="GuitarSprite" type="Sprite2D" parent="."]
+position = Vector2(605, 341)
+rotation = -0.00404799
+scale = Vector2(0.702, 0.7)
+texture = ExtResource("2_wmoyb")
+
+[node name="NoteKiller" type="Area2D" parent="."]
+position = Vector2(610, 703)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoteKiller"]
+position = Vector2(3, -24)
+shape = SubResource("RectangleShape2D_wmoyb")
+
+[node name="NoteSpawnerRed" parent="." instance=ExtResource("3_wmoyb")]
+light_mask = 6
+position = Vector2(571, -9)
+
+[node name="NoteSpawnerOrange" parent="." instance=ExtResource("3_wmoyb")]
+light_mask = 6
+position = Vector2(598, -9)
+script = ExtResource("4_jmp0b")
+
+[node name="NoteSpawnerGreen" parent="." instance=ExtResource("3_wmoyb")]
+light_mask = 6
+position = Vector2(625, -10)
+script = ExtResource("5_bdf0j")
+
+[node name="NoteSpawnerBlue" parent="." instance=ExtResource("3_wmoyb")]
+light_mask = 6
+position = Vector2(652.5, -10)
+script = ExtResource("4_n21kc")
+
+[node name="RedString" type="Area2D" parent="."]
+position = Vector2(610, 703)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedString"]
+position = Vector2(-37, -192)
+shape = SubResource("RectangleShape2D_bdf0j")
+
+[node name="OrangeString" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrangeString"]
+position = Vector2(601, 512)
+shape = SubResource("RectangleShape2D_f3xd0")
+
+[node name="GreenString" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GreenString"]
+position = Vector2(628, 512)
+shape = SubResource("RectangleShape2D_f3xd0")
+
+[node name="BlueString" type="Area2D" parent="."]
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueString"]
+position = Vector2(655, 511)
+shape = SubResource("RectangleShape2D_f3xd0")
+
+[node name="ComboLabel" type="Label" parent="."]
+offset_left = 9.0
+offset_top = -9.0
+offset_right = 45.0
+offset_bottom = 56.0
+text = "0"
+label_settings = SubResource("LabelSettings_f3xd0")
+script = ExtResource("7_f3xd0")

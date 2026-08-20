@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://i08gvfkjky4r"]
+
+[ext_resource type="Script" uid="uid://dgwwgbjg2hsdq" path="res://Red_spawner.gd" id="1_dsjd3"]
+
+[node name="NoteSpawner" type="Node2D"]
+script = ExtResource("1_dsjd3")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true

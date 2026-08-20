@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://depkw84drwtvc"]
+
+[ext_resource type="Script" uid="uid://chgbottikxoxw" path="res://combo_score.gd" id="1_ixruh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ixruh"]
+font_size = 70
+
+[sub_resource type="LabelSettings" id="LabelSettings_rshdg"]
+font_size = 70
+
+[node name="ComboScore" type="Node2D"]
+script = ExtResource("1_ixruh")
+
+[node name="ComboText" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 262.0
+offset_bottom = 98.0
+text = "Combo:"
+label_settings = SubResource("LabelSettings_ixruh")
+
+[node name="ComboCount" type="Label" parent="."]
+offset_left = 278.0
+offset_top = 6.0
+offset_right = 318.0
+offset_bottom = 102.0
+text = "0"
+label_settings = SubResource("LabelSettings_rshdg")

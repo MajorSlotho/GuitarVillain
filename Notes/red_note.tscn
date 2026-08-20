@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://6qrbfx8hpoas"]
+
+[ext_resource type="Script" uid="uid://cgufbf6y1jok1" path="res://NoteScript.gd" id="1_ql4u4"]
+[ext_resource type="Texture2D" uid="uid://c002kffnf2hnw" path="res://Notes/RedNote.svg" id="1_utldt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ql4u4"]
+radius = 47.1404
+
+[node name="RedNote" type="Node2D"]
+script = ExtResource("1_ql4u4")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_utldt")
+
+[node name="Area2D" type="Area2D" parent="Sprite"]
+light_mask = 6
+collision_mask = 62
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
+visible = false
+shape = SubResource("CircleShape2D_ql4u4")
+
+[connection signal="area_entered" from="Sprite/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Sprite/Area2D" to="." method="_on_area_2d_body_entered"]

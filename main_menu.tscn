@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://cd48kqtnsxn6o"]
+
+[ext_resource type="Script" uid="uid://dwvg4c8vtot85" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://ckesiva0ijh7a" path="res://BoomBox.svg" id="2_7vrkn"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_06t4h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t4h"]
+bg_color = Color(0.919187, 0.436535, 0.299428, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.984314, 0.156863, 0.239216, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_rhts7"]
+font_size = 44
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_06t4h")
+
+[node name="MMBackground" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("2_7vrkn")
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 462.0
+offset_top = 210.0
+offset_right = 826.0
+offset_bottom = 311.0
+theme_override_font_sizes/font_size = 68
+text = "ROCK ON!"
+icon = SubResource("ViewportTexture_06t4h")
+
+[node name="SpeedSlider" type="HSlider" parent="."]
+offset_left = 474.0
+offset_top = 329.0
+offset_right = 557.0
+offset_bottom = 345.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_06t4h")
+min_value = 1.0
+max_value = 3.0
+step = 0.05
+value = 1.0
+
+[node name="SpeedLabel" type="Label" parent="SpeedSlider"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = -5.0
+offset_right = 204.0
+offset_bottom = 18.0
+text = "Game Speed: 1"
+
+[node name="HighscoreLabel" type="Label" parent="."]
+offset_left = 523.0
+offset_top = 604.0
+offset_right = 790.0
+offset_bottom = 689.0
+text = "Highscore: 0"
+label_settings = SubResource("LabelSettings_rhts7")
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 1148.0
+offset_top = 648.0
+offset_right = 1235.0
+offset_bottom = 679.0
+text = "Exit Game"
+
+[node name="ScoreResetButton" type="Button" parent="."]
+offset_left = 51.0
+offset_top = 638.0
+offset_right = 195.0
+offset_bottom = 676.0
+text = "Reset Highscore"
+
+[connection signal="button_down" from="StartButton" to="." method="_on_start_button_button_down"]
+[connection signal="value_changed" from="SpeedSlider" to="." method="_on_speed_slider_value_changed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="ScoreResetButton" to="." method="_on_score_reset_button_pressed"]
